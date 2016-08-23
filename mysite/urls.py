@@ -5,7 +5,7 @@ import myapp
 admin.autodiscover()
 
 urlpatterns = [
-    
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('myapp.urls')),
+
+    url(r'^admin/', include('admin.site.urls')),
+    url(r'^', include('myapp.urls','myapp')),
 ]
