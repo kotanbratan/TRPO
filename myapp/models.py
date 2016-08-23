@@ -22,8 +22,16 @@ class Product(models.Model):
 class Type(models.Model):
     type_name = models.CharField("Тип заявки", max_length=100)
 
+    class Meta():
+        verbose_name = "Тип"
+        verbose_name_plural = "Типы"
+
 class Status(models.Model):
     status_name = models.CharField("Статус", max_length=100)
+
+    class Meta():
+        verbose_name = "Статус"
+        verbose_name_plural = "Статусы"
 
 class Bid(models.Model):
     number = models.IntegerField("Номер заявки", default=0)
