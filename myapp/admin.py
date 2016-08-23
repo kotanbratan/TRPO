@@ -6,6 +6,7 @@ from myapp.models import Bid, Partner, Status, Type, Product
 #    list_filter = ['date']
 
 admin.site.register(Bid)#, BidAdmin)
-#admin.site.register(Partner)
-#admin.site.register(Status)
-#admin.site.register(Type)
+admin.site.register(Partner)
+admin.site.register(Status)
+admin.site.register(Type)
+admin.site.register(Product)

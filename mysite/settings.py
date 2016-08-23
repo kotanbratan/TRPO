@@ -83,13 +83,14 @@ DATABASES = {
     }
 }
 
+#LOGIN_URL = '/auth/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-Ru'
 
-TIME_ZONE = 'Europe-Moscow'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
