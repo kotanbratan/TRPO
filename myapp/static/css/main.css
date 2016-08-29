@@ -1,0 +1,248 @@
+.header {
+    height: 6rem;
+    background-color: #185F8D;
+}
+
+.menu {
+}
+.menu .menu__item {
+    float: right;
+    margin-left: 3rem;
+}
+
+.menu .menu__item:last-child {
+    margin-right: 3rem;
+}
+
+.link_menu {
+    font-size: 3rem;
+    text-decoration: none;
+    color: white;
+}
+
+.link_test {
+    color: #A4A0A4;
+}
+
+.link_create {
+    color: #A4A0A4;
+    margin-right: .5rem;
+}
+
+.profile {
+    margin-top: 5rem;
+}
+
+.profile .profile__line {
+    margin-bottom: 5rem;
+}
+
+.actions {
+    margin-bottom: 3rem;
+}
+
+.action {
+    height: 50rem;
+    min-width: 20rem;
+
+
+    border-radius: 1rem;
+
+    /*cursor: pointer;*/
+
+    text-align: center;
+}
+
+.action .action__line {
+    margin-bottom: 2rem;
+}
+
+.action .action__icon {
+    display: inline-block;
+}
+
+.icon_pass-test,
+.icon_diploma,
+.icon_file,
+.icon_test,
+.icon_grade,
+.icon_points
+{
+    height: 20rem;
+    width: 20rem;
+}
+
+.icon_pass-test {
+    background-image: url(../svg/pencil-1.svg);
+    background-size: contain;
+}
+
+.icon_diploma {
+    background-image: url(../svg/diploma-1.svg);
+    background-size: contain;
+}
+
+.icon_file {
+    background-image: url(../svg/file.svg);
+    background-size: contain;
+}
+
+.icon_test {
+    background-image: url(../svg/test.svg);
+    background-size: contain;
+}
+
+.icon_grade {
+    background-image: url(../svg/graduate.svg);
+    background-size: contain;
+}
+
+.icon_points {
+    background-image: url(../svg/trophy.svg);
+    background-size: contain;
+}
+
+.icon_action {
+    display: inline-block;
+
+    position: relative;
+    top: .5rem;
+
+    height: 2rem;
+    width: 2rem;
+
+}
+.icon_printer {
+
+    background-image: url(../svg/printer.svg);
+    background-size: contain;
+}
+
+.icon_plus {
+    background-image: url(../svg/plus_1.svg);
+    background-size: contain;
+}
+
+.actions_test {
+    margin-top: 2rem;
+}
+
+.actions__item {
+    display: inline-block;
+}
+
+.action_item-add {
+    float: right;
+}
+
+.search {
+    margin-top: 2rem;
+}
+
+.icon-wrapper {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+}
+.icon_search {
+    position: relative;
+    top: .5rem;
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    background-image: url(../svg/magnifying-glass.svg);
+    background-size: contain;
+}
+
+.button__text {
+    margin-left: .1rem;
+}
+
+
+.form {
+
+}
+
+.form_auth {
+    position: absolute;
+    top: 30rem;
+}
+
+.form .form__error {
+    color: red;
+}
+
+
+.form__input {
+    background: transparent;
+
+    resize: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.test-edit {
+
+}
+
+.test-edit .test-edit__text-area {
+    height: 20rem;
+}
+
+.test-edit__delete {
+    margin-left: 2rem;
+}
+
+.section-question {
+    min-height: 30rem;
+
+    border: 1px solid black;
+}
+
+.section-question__title,
+.section-question__current-number {
+    text-align: center;
+}
+.section-question__desc {
+    margin-left: 3rem;
+    text-align: left;
+}
+
+.section-answer {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.answer-variant__add:hover,
+.section-answer_selected,
+.control:hover,
+.section-answer:hover .section-answer__text {
+    opacity: .5;
+}
+
+.control {
+    display: inline-block;
+}
+
+.question-form {
+    cursor: pointer;
+}
+
+.question-form:hover {
+    background-color: #f8f8f8;
+
+}
+
+.answer-variant__add {
+    margin-left: 1rem;
+}
+
+.error__text {
+    color: red;
+}
+
+.star-required {
+    color: red;
+}
