@@ -13,7 +13,7 @@ class Partner(models.Model):
 class Product(models.Model):
     product_name = models.CharField("Наименование", max_length=100)
     price = models.IntegerField("Цена", default=0)
-    product_model = models.CharField("Модель", max_length=100)
+    #product_model = models.CharField("Модель", max_length=100)
 
     class Meta():
         verbose_name = "Товар"
@@ -34,7 +34,7 @@ class Status(models.Model):
         verbose_name_plural = "Статусы"
 
 class Bid(models.Model):
-    number = models.IntegerField("Номер заявки", default=0)
+    #number = models.IntegerField("Номер заявки", default = 0)
     date = models.DateTimeField("Дата", default=timezone.now)
     manager = models.CharField("Менеджер", max_length=200)
     bid_partner = models.ForeignKey(Partner, verbose_name="Контрагент")
@@ -43,6 +43,9 @@ class Bid(models.Model):
     amount = models.IntegerField("Количество", default=0)
     bid_status = models.ForeignKey(Status, verbose_name="Статус")
     #total = models.IntegerField("Сумма", default=0)
+
+    #def get_number(self):
+    #    return self.number
 
     class Meta():
         verbose_name = "Заявка"

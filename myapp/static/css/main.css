@@ -2,7 +2,10 @@
     height: 6rem;
     background-color: #185F8D;
 }
-
+h1 a {
+      color: #FCA205;
+      font-family: 'Lobster';
+  }
 .menu {
 }
 .menu .menu__item {

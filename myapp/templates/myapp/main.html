@@ -1,11 +1,24 @@
-{% extends 'base.html' %}
-{% block title %}АСУ изготовления пропусков{% endblock %}
-{% block nav_brand %}АСУ изготовления пропусков{% endblock %}
-{% block bodycontent %}
-    <h3>Подсистемы:</h3>
-    <br/>
-    <ul>
-        <li><a href="requestsystem">Подсистема заявок</a> </li>
-    </ul>
+{% load staticfiles %}
 
-{% endblock %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+      <div class="page-header">
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    {% for bid in bids %}
+        <div class="bid">
+            <p>created: {{ bid.date }}</p>
+            <h1><a href="">{{ bid.number }}</a></h1>
+            <p>{{ bid.product }}</p>
+        </div>
+    {% endfor %}
+    </body>
+</html>
