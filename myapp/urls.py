@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^2/', views.temp_two),
     url(r'^3/', views.temp_three),
     url(r'^bids/all/$', views.bids),
-    url(r'^bids/get/(?<bid_id>)\d+/$', views.bid),
+    url(r'^bid/(?P<bid_id>\d+)/$', views.bid),
     #url(r'^auth/$', views.AuthView, name='auth'),
     #url(r'^bids/$', views.BidsListView, name='bids_list'),
 ]

@@ -34,4 +34,4 @@ def bids(request):
     return render_to_response('bids.html', {'bids': Bid.objects.all()})
 
 def bid(request, bid_id = 1):
-    return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})#, 'product': Product.objects.)
+    return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})#, 'product': Product.objects.filter(product_bid_id=bid_id)})

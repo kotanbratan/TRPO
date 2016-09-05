@@ -4,6 +4,13 @@
   <title>Заявки</title>
 </head>
 <body>
-  This is {{ name }} view
+  {% for bid in bids %}
+      <h6>{{ bid.date }}</h6>
+      <h4>Менеджер: {{ bid.manager }}</h4>
+      <p>{{ bid.bid_product }}</p>
+      <p>{{ bid.amount }}</p>
+      <h5><a href = "/bid/{{ bid.id }}">Перейти к просмотру заявки</a></h5>
+      <hr>
+    {% endfor %}
 </body>
 </html>
