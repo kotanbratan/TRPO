@@ -3,22 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Заявки</title>
+  <title>Контрагенты</title>
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
-  <div class="page-header">
-      <h1>Список заявок</h1>
-  </div>
-  {% for bid in bids %}
-      <h6>Дата: {{ bid.date }}</h6>
-      <h4>Создал: {{ bid.manager }}</h4>
-      <p>Товар: {{ bid.bid_product }} | Количество: {{ bid.amount }}</p>
-      <h5><a href = "/bid/{{ bid.id }}">Перейти к просмотру заявки</a></h5>
+  {% for partner in partners %}
+      <h4>Имя: {{ partner.partner_name }}</h4>
+      <p>Телефон: {{ partner.partner_phone }}</p>
+      <p>Организация: {{ partner.organization }}</p>
       <hr>
-    {% endfor %}
+  {% endfor %}
 </body>
 </html>

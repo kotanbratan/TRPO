@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>АРМ менеджера</title>
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -10,15 +10,13 @@
     </head>
     <body>
       <div class="page-header">
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
-
-    {% for bid in bids %}
-        <div class="bid">
-            <p>created: {{ bid.date }}</p>
-            <h1><a href="">{{ bid.number }}</a></h1>
-            <p>{{ bid.product }}</p>
-        </div>
-    {% endfor %}
+          <h1><a href="/">АРМ менеджера по созданию и редактированию заявок</a></h1>
+      </div>
+      <div class="bid">
+          <h5><a href = "/bids/all/">Перейти к просмотру заявок</a></h5>
+      </div>
+      <div class="product">
+          <h5><a href = "/products/all/">Перейти к просмотру товаров</a></h5>
+      </div>
     </body>
 </html>

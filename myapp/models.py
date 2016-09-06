@@ -33,6 +33,7 @@ class Status(models.Model):
         verbose_name = "Статус"
         verbose_name_plural = "Статусы"
 
+
 class Bid(models.Model):
     #number = models.IntegerField("Номер заявки", default = 0)
     date = models.DateTimeField("Дата", default=timezone.now)
@@ -42,10 +43,18 @@ class Bid(models.Model):
     bid_product = models.ForeignKey(Product, verbose_name="Товар")
     amount = models.IntegerField("Количество", default=0)
     bid_status = models.ForeignKey(Status, verbose_name="Статус")
-    #total = models.IntegerField("Сумма", default=0)
 
-    #def get_number(self):
-    #    return self.number
+    def get_bid_partner(self):
+        return self.bid_partner
+
+    def get_bid_type(self):
+        return self.bid_type
+
+    def get_bid_product(self):
+        return self.bid_product
+
+    def get_bid_status(self):
+        return self.bid_status
 
     class Meta():
         verbose_name = "Заявка"

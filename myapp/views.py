@@ -30,8 +30,14 @@ def temp_three (request):
     view = "temp_three"
     return render_to_response('temp.html', {'name': view})
 
-def bids(request):
+def BidsList(request):
     return render_to_response('bids.html', {'bids': Bid.objects.all()})
 
-def bid(request, bid_id = 1):
+def BidView(request, bid_id = 1):
     return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})#, 'product': Product.objects.filter(product_bid_id=bid_id)})
+
+def ProductsList(request):
+    return render_to_response('products.html', {'products': Product.objects.all()})
+
+def PartnersList(request):
+    return render_to_response('partners.html', {'partners': Partner.objects.all()})
