@@ -3,17 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Товары</title>
+  <title>Заявка</title>
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
-  {% for product in products %}
-      <h4>Наименование: {{ product.product_name }}</h4>
-      <p>Цена: {{ product.price }}</p>
-      <hr>
-  {% endfor %}
+    <h5>Дата: {{ bid.date }}</h5>
+    <h4>Создал: {{ bid.manager }}</h4>
+    <h4>Статус заявки: {{ bid.bid_status }}</a></h4>
+    <hr>
+    <p>Товар: {{ bid.bid_product }}</p>
+    <p>Количество: {{ bid.amount }}</p>
 </body>
 </html>

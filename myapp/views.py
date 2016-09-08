@@ -36,8 +36,17 @@ def BidsList(request):
 def BidView(request, bid_id = 1):
     return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})#, 'product': Product.objects.filter(product_bid_id=bid_id)})
 
+def StatusEdit(request, bid_id = 1):
+    return render_to_response('StatusEdit.html', {'status': Status.objects.get(id=bid_id)})
+
 def ProductsList(request):
     return render_to_response('products.html', {'products': Product.objects.all()})
 
 def PartnersList(request):
     return render_to_response('partners.html', {'partners': Partner.objects.all()})
+
+def NewBidView(request, bid_id = 1):
+    return render_to_response('NewBid.html', {'bid': Bid.objects.get(id=bid_id)})
+
+def BidEditView (request, bid_id = 1, bid_partner_id = 1):
+    return render_to_response('BidEdit.html', {'bid': Bid.objects.get(id=bid_id), 'products': Product.objects.all(), 'statuses': Status.objects.all(), 'partner': Partner.objects.filter(id=bid_partner_id)})

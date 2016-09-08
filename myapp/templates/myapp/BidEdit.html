@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Редактирование заявки</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+  <h5>Дата: {{ bid.date }}</h5>
+  <h4>Создал: {{ bid.manager }}</h4>
+  <h4>Контрагент: {{ partner.partner_name }}</h4>
+  <h4>Тип заявки: {{ bid.bid_type }}</h4>
+<form action = "new" method="get">
+    <b>Выберите статус заявки:</b><Br>
+      {% for status in statuses %}
+        <input type="radio" name="bid_status"> {{ status.status_name }} <Br>
+      {% endfor %}
+
+    <b>Выберите товар:</b><Br>
+      <select name="bid_product">
+        {% for product in products %}
+          <option>{{ product.product_name }}</option>
+        {% endfor %}
+      </select>
+
+      <p><b>Количество:</b><br>
+        <input type="text" size="40" name="amount"></p>
+      <p><input type="submit" value="Отправить"></p>
+</form>
+</body>
+</html>

@@ -12,9 +12,13 @@
 <body>
     <h5>Дата: {{ bid.date }}</h5>
     <h4>Создал: {{ bid.manager }}</h4>
-    <h4>Статус заявки:<a href = "/bid/status/{{ bid.id }}"> {{ bid.bid_status }}</a></h4>
+    <h4>Контрагент: {{ bid.bid_partner }}</h4>
+    <h4>Статус заявки:<a href = "/bid/{{ bid.id }}/status"> {{ bid.bid_status }}</a></h4>
+    <h4>Тип заявки: {{ bid.bid_type }}</h4>
     <hr>
     <p>Товар: {{ bid.bid_product }}</p>
     <p>Количество: {{ bid.amount }}</p>
+    <hr>
+    <h5><a href = "/bid/{{ bid.id }}/edit">Редактировать заявку</a></h5>
 </body>
 </html>

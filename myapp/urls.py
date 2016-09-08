@@ -10,9 +10,10 @@ urlpatterns = [
     url(r'^bids/all/$', views.BidsList),
     url(r'^bid/(?P<bid_id>\d+)/$', views.BidView),
     url(r'^products/all/$', views.ProductsList),
-    #url(r'^bid/edit/(?P<bid_id>\d+)/$', views.bid_edit),
+    url(r'^bid/(?P<bid_id>\d+)/edit/$', views.BidEditView),
     url(r'^partners/all/$', views.PartnersList),
-    #url(r'^bid/status/(?P<bid_id>\d+)/$', views.bid_status_edit),
+    url(r'^bid/(?P<bid_id>\d+)/status/$', views.StatusEdit),
+    url(r'^bid/(?P<bid_id>\d+)/status/new/$', views.NewBidView),
 
     #url(r'^auth/$', views.AuthView, name='auth'),
 ]
