@@ -1,27 +1,22 @@
-{% load staticfiles %}
+{% extends 'profile/base.html' %}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Редактирование статуса</title>
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-</head>
-<body>
+{% block content %}
+
   <h5>Дата: {{ bid.date }}</h5>
   <h4>Создал: {{ bid.manager }}</h4>
   <h4>Контрагент: {{ bid.bid_partner }}</h4>
   <h4>Тип заявки: {{ bid.bid_type }}</h4>
   <p>Товар: {{ bid.bid_product }}</p>
   <p>Количество: {{ bid.amount }}</p>
-<form action = "new" method="get">
+<form action = "/bid/{{ bid.id }}/status/new/" method="post">
+  {{% csrf_token %}}
   <b>Выберите статус заявки:</b><Br>
     {% for status in statuses %}
       <input type="radio" name="bid_status" value="{{ status.status_id }}"> {{ status.status_name }} <Br>
     {% endfor %}
-      <p><input type="submit" value="Отправить"></p>
+
+    {{ form }}
+      <p><input type="submit" value="Сохранить"></p>
 </form>
-</body>
-</html>
+
+{% endblock content %}

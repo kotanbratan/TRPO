@@ -8,7 +8,8 @@ from django.shortcuts import render_to_response
 #from django.contrib.auth import login, logout
 #from django.contrib.auth.decorators import login_required
 from myapp.models import Bid, Partner, Product, Status, Type
-
+from myapp.forms import StatusForm
+from django.core.context_processors import csrf
 
 # Create your views here.
 def MainView (request):
@@ -36,8 +37,14 @@ def BidsList(request):
 def BidView(request, bid_id = 1):
     return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})
 
-def StatusEdit(request, bid_id = 1):
-    return render_to_response('StatusEdit.html', {'bid': Bid.objects.get(id=bid_id), 'statuses': Status.objects.all()})
+def StatusEdit(request, bid_id=1):
+    status_form = StatusForm
+    args = {}
+    args.update(csrf(request))
+    args['bid'] = Bid.objects.get(id=bid_id)
+    args['statuses'] = Status.objects.all()
+    args['form'] = status_form
+    return render_to_response('StatusEdit.html', args)
 
 def ProductsList(request):
     return render_to_response('products.html', {'products': Product.objects.all()})
@@ -46,6 +53,8 @@ def PartnersList(request):
     return render_to_response('partners.html', {'partners': Partner.objects.all()})
 
 def NewBidView(request, bid_id = 1):
+    status = request.get('status')
+    Bid.objects.filter(id=bid_id).update(bid_status=status)
     return render_to_response('NewBid.html', {'bid': Bid.objects.get(id=bid_id)})
 
 def BidEditView (request, bid_id = 1):
