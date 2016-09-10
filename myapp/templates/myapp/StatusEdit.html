@@ -10,14 +10,17 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+  <h5>Дата: {{ bid.date }}</h5>
+  <h4>Создал: {{ bid.manager }}</h4>
+  <h4>Контрагент: {{ bid.bid_partner }}</h4>
+  <h4>Тип заявки: {{ bid.bid_type }}</h4>
+  <p>Товар: {{ bid.bid_product }}</p>
+  <p>Количество: {{ bid.amount }}</p>
 <form action = "new" method="get">
-  <div class="page-header">
-      <b>Выберите статус заявки:</b><Br>
-  </div>
-    <input type="radio" name="status"> Принята <Br>
-    <input type="radio" name="status"> Обработка <Br>
-    <input type="radio" name="status"> Сборка <Br>
-    <input type="radio" name="status"> Готова <Br>
+  <b>Выберите статус заявки:</b><Br>
+    {% for status in statuses %}
+      <input type="radio" name="bid_status" value="{{ status.status_id }}"> {{ status.status_name }} <Br>
+    {% endfor %}
       <p><input type="submit" value="Отправить"></p>
 </form>
 </body>

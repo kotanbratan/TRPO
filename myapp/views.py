@@ -13,7 +13,7 @@ from myapp.models import Bid, Partner, Product, Status, Type
 # Create your views here.
 def MainView (request):
     #bids = Bid.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'myapp/main.html', {})
+    return render(request, 'profile/main.html', {})
 
 def temp_one (request):
     view = "temp_one"
@@ -34,10 +34,10 @@ def BidsList(request):
     return render_to_response('bids.html', {'bids': Bid.objects.all()})
 
 def BidView(request, bid_id = 1):
-    return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})#, 'product': Product.objects.filter(product_bid_id=bid_id)})
+    return render_to_response('bid.html', {'bid': Bid.objects.get(id=bid_id)})
 
 def StatusEdit(request, bid_id = 1):
-    return render_to_response('StatusEdit.html', {'status': Status.objects.get(id=bid_id)})
+    return render_to_response('StatusEdit.html', {'bid': Bid.objects.get(id=bid_id), 'statuses': Status.objects.all()})
 
 def ProductsList(request):
     return render_to_response('products.html', {'products': Product.objects.all()})
@@ -48,5 +48,5 @@ def PartnersList(request):
 def NewBidView(request, bid_id = 1):
     return render_to_response('NewBid.html', {'bid': Bid.objects.get(id=bid_id)})
 
-def BidEditView (request, bid_id = 1, bid_partner_id = 1):
-    return render_to_response('BidEdit.html', {'bid': Bid.objects.get(id=bid_id), 'products': Product.objects.all(), 'statuses': Status.objects.all(), 'partner': Partner.objects.filter(id=bid_partner_id)})
+def BidEditView (request, bid_id = 1):
+    return render_to_response('BidEdit.html', {'bid': Bid.objects.get(id=bid_id), 'products': Product.objects.all(), 'statuses': Status.objects.all(), 'partners': Partner.objects.all()})

@@ -19,6 +19,9 @@
     <p>Товар: {{ bid.bid_product }}</p>
     <p>Количество: {{ bid.amount }}</p>
     <hr>
-    <h5><a href = "/bid/{{ bid.id }}/edit">Редактировать заявку</a></h5>
+    <div>
+      <h4><a href = "/bid/{{ bid.id }}/edit">Редактировать заявку</a></h4>
+      <h4><a href="/bids/all/">Вернуться к списку заявок</a></h4>
+    </div>
 </body>
 </html>

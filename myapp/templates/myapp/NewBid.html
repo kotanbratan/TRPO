@@ -10,11 +10,16 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
-    <h5>Дата: {{ bid.date }}</h5>
-    <h4>Создал: {{ bid.manager }}</h4>
-    <h4>Статус заявки: {{ bid.bid_status }}</a></h4>
-    <hr>
-    <p>Товар: {{ bid.bid_product }}</p>
-    <p>Количество: {{ bid.amount }}</p>
+  <h5>Дата: {{ bid.date }}</h5>
+  <h4>Создал: {{ bid.manager }}</h4>
+  <h4>Статус заявки: {{ bid.bid_status }}</a></h4>
+  <h4>Контрагент: {{ bid.bid_partner }}</h4>
+  <h4>Тип заявки: {{ bid.bid_type }}</h4>
+  <hr>
+  <p>Товар: {{ bid.bid_product }}</p>
+  <p>Количество: {{ bid.amount }}</p>
+<div>
+  <h4><a href="/bids/all/">Вернуться к списку заявок</a></h4>
+</div>
 </body>
 </html>

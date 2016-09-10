@@ -10,26 +10,35 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
-  <h5>Дата: {{ bid.date }}</h5>
-  <h4>Создал: {{ bid.manager }}</h4>
-  <h4>Контрагент: {{ partner.partner_name }}</h4>
-  <h4>Тип заявки: {{ bid.bid_type }}</h4>
-<form action = "new" method="get">
-    <b>Выберите статус заявки:</b><Br>
-      {% for status in statuses %}
-        <input type="radio" name="bid_status"> {{ status.status_name }} <Br>
-      {% endfor %}
+  <div class="page-header">
+        <h1><a href="/">Редактирование заявки</a></h1>
+    </div>
+    <h5>Дата: {{ bid.date }}</h5>
+    <h4>Создал: {{ bid.manager }}</h4>
+    <h4>Тип заявки: {{ bid.bid_type }}</h4>
+  <form action = "new" method="get">
+      <b>Выберите контрагента:</b><Br>
+        <select name="bid_partner">
+          {% for partner in partners %}
+            <option>{{ partner.partner_name }}</option>
+            {% endfor %}
+          </select><Br>
 
-    <b>Выберите товар:</b><Br>
-      <select name="bid_product">
-        {% for product in products %}
-          <option>{{ product.product_name }}</option>
+      <b>Выберите статус заявки:</b><Br>
+        {% for status in statuses %}
+          <input type="radio" name="bid_status"> {{ status.status_name }} <Br>
         {% endfor %}
-      </select>
 
-      <p><b>Количество:</b><br>
-        <input type="text" size="40" name="amount"></p>
-      <p><input type="submit" value="Отправить"></p>
+      <b>Выберите товар:</b><Br>
+        <select name="bid_product">
+          {% for product in products %}
+            <option>{{ product.product_name }}</option>
+          {% endfor %}
+        </select><Br>
+
+        <p><b>Количество:</b><br>
+          <input type="text" size="40" name="amount"></p>
+        <p><input type="submit" value="Отправить"></p>
 </form>
 </body>
 </html>

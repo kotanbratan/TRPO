@@ -14,6 +14,6 @@ urlpatterns = [
     url(r'^partners/all/$', views.PartnersList),
     url(r'^bid/(?P<bid_id>\d+)/status/$', views.StatusEdit),
     url(r'^bid/(?P<bid_id>\d+)/status/new/$', views.NewBidView),
-
+    url(r'^bid/(?P<bid_id>\d+)/edit/new/$', views.NewBidView),
     #url(r'^auth/$', views.AuthView, name='auth'),
 ]

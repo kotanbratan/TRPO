@@ -10,12 +10,16 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+  <div>
+    <h4><a href="/">Вернуться на главную страницу</a></h4>
+  </div>
   <div class="page-header">
       <h1>Список заявок</h1>
   </div>
   {% for bid in bids %}
       <h6>Дата: {{ bid.date }}</h6>
       <h4>Создал: {{ bid.manager }}</h4>
+      <h4>Тип заявки: {{ bid.bid_type }}</h4>
       <p>Товар: {{ bid.bid_product }} | Количество: {{ bid.amount }}</p>
       <h5><a href = "/bid/{{ bid.id }}">Перейти к просмотру заявки</a></h5>
       <hr>

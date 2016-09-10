@@ -56,7 +56,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/djangogirls/myapp/templates/myapp'
+            '/djangogirls/myapp/templates/myapp',
+            '/djangogirls/myapp/templates/profile',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
