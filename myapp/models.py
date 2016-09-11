@@ -38,11 +38,11 @@ class Bid(models.Model):
     #number = models.IntegerField("Номер заявки", default = 0)
     date = models.DateTimeField("Дата", default=timezone.now)
     manager = models.CharField("Менеджер", max_length=200)
-    bid_partner = models.ForeignKey(Partner, verbose_name="Контрагент")
-    bid_type = models.ForeignKey(Type, verbose_name="Тип заявки")
-    bid_product = models.ForeignKey(Product, verbose_name="Товар")
+    bid_partner = models.ForeignKey(Partner, verbose_name="Контрагент", null=True, blank=True)
+    bid_type = models.ForeignKey(Type, verbose_name="Тип заявки", null=True, blank=True)
+    bid_product = models.ForeignKey(Product, verbose_name="Товар", null=True, blank=True)
     amount = models.IntegerField("Количество", default=0)
-    bid_status = models.ForeignKey(Status, verbose_name="Статус")
+    bid_status = models.ForeignKey(Status, verbose_name="Статус", null=True, blank=True)
 
     def get_bid_partner(self):
         return self.bid_partner

@@ -1,6 +1,20 @@
 {% extends 'profile/base.html' %}
 
 {% block content %}
+
+<!--  <div class="bid">
+       {% if bid.date %}
+           <div class="date">
+               {{ bid.date }}
+           </div>
+       {% endif %}
+       <a class="btn btn-default" href="{% url 'bid_edit' pk=bid.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       <h3>Создал: {{ bid.manager }}</h3>
+       <h3>Контрагент: {{ bid.bid_partner }}</h3>
+       <p>{{ post.text|linebreaksbr }}</p>
+   </div>-->
+
+
     <h5>Дата: {{ bid.date }}</h5>
     <h4>Создал: {{ bid.manager }}</h4>
     <h4>Контрагент: {{ bid.bid_partner }}</h4>

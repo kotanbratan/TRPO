@@ -1,11 +1,18 @@
 {% extends 'profile/base.html' %}
 
 {% block content %}
+<!--<h1>New bid</h1>
+       <form method="POST" class="bid-form">{% csrf_token %}
+           {{ form.as_p }}
+           <button type="submit" class="save btn btn-default">Save</button>
+       </form>-->
+
+
 
     <h5>Дата: {{ bid.date }}</h5>
     <h4>Создал: {{ bid.manager }}</h4>
     <h4>Тип заявки: {{ bid.bid_type }}</h4>
-  <form action = "new" method="get">
+  <form action = "new" method="post">
       <b>Выберите контрагента:</b><Br>
         <select name="bid_partner">
           {% for partner in partners %}
@@ -27,6 +34,6 @@
 
         <p><b>Количество:</b><br>
           <input type="text" size="40" name="amount"></p>
-        <p><input type="submit" value="Отправить"></p>
+        <p><input type="submit" value="Сохранить"></p>
 </form>
 {% endblock content %}

@@ -1,8 +1,8 @@
-from django.forms import ModelForm, Form
+from django.forms import ModelForm, Form, ModelChoiceField
 
-from myapp.models import Status
+from .models import Bid
 
-class StatusForm(ModelForm):
+class BidForm(ModelForm):
     class Meta:
-        model = Status
-        fields = ['status_name',]
+        model = Bid
+        fields = ['date', 'manager', 'bid_partner', 'bid_type', 'bid_status', 'bid_product', 'amount']

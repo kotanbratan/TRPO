@@ -9,7 +9,6 @@
   <p>Товар: {{ bid.bid_product }}</p>
   <p>Количество: {{ bid.amount }}</p>
 <form action = "/bid/{{ bid.id }}/status/new/" method="post">
-  {{% csrf_token %}}
   <b>Выберите статус заявки:</b><Br>
     {% for status in statuses %}
       <input type="radio" name="bid_status" value="{{ status.status_id }}"> {{ status.status_name }} <Br>
