@@ -93,4 +93,8 @@ def BidEditView (request, pk):
         else:
             form = BidEditForm(instance=bid)
         return render(request, 'myapp/BidEdit.html', {'form': form})
-#    return render_to_response('BidEdit.html', {'bid': Bid.objects.get(id=bid_id), 'products': Product.objects.all(), 'statuses': Status.objects.all(), 'partners': Partner.objects.all()})
+
+def DeleteView (request, pk):
+    d = Bid.objects.get(id=pk)
+    d.delete()
+    return render_to_response('bids.html', {'bids': Bid.objects.all()})

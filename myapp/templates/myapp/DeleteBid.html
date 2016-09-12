@@ -1,0 +1,9 @@
+{% extends 'profile/base.html' %}
+
+{% block content %}
+<h1>Удаление</h1>
+       <form method="POST" class="bid-form">{% csrf_token %}
+           <button type="submit" class="save btn btn-default">Удалить</button>
+       </form>
+
+{% endblock content %}

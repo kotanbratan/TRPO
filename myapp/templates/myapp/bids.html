@@ -2,13 +2,14 @@
 
 {% block content %}
   <div class="page-header">
-    <a href="{% url 'myapp.views.NewBidView' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            </div>
+    <h4><a href="{% url 'myapp.views.NewBidView' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Создать заявку</span></a></h4>
+  </div>
   {% for bid in bids %}
       <h6>Дата: {{ bid.date }}</h6>
       <h4>Создал: {{ bid.manager }}</h4>
       <h4>Тип заявки: {{ bid.bid_type }}</h4>
       <p>Товар: {{ bid.bid_product }} | Количество: {{ bid.amount }}</p>
+      <h4 align="left"><a href="{% url 'delete_bid' pk=bid.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-remove">Удалить</span></a></h4>
       <h5><a href = "/bid/{{ bid.id }}">Перейти к просмотру заявки</a></h5>
       <hr>
   {% endfor %}

@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^partners/all/$', views.PartnersList),
     url(r'^bid/(?P<pk>\d+)/edit/$', views.BidEditView, name = 'bid_edit'),
     url(r'^bid/(?P<pk>\d+)/status/$', views.StatusEdit),
+    url(r'^bid/(?P<pk>\d+)/delete$', views.DeleteView, name = "delete_bid"),
     #url(r'^bid/(?P<bid_id>\d+)/status/new/$', views.NewBidView),
     #url(r'^bid/(?P<bid_id>\d+)/edit/new/$', views.NewBidView),
     url(r'^bid/new/$', views.NewBidView, name = 'bid_new'),
