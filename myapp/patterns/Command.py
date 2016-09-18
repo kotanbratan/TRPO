@@ -1,8 +1,8 @@
 from django.utils import timezone
 
-from core.model.test.records import TestRecord, QuestionRecord, AnswerRecord
+#from myapp.records import BidRecord, ProductRecord, PartnerRecord
 
-class Light(object):
+class BidDomain(object):
     def turn_on(self):
         print 'Включить свет'
 
@@ -30,16 +30,28 @@ class TurnOffLightCommand(LightCommandBase):
         self.light.turn_off()
 
 
-class Switch(object):
-    def __init__(self, on_cmd, off_cmd):
-        self.on_cmd = on_cmd
-        self.off_cmd = off_cmd
+class Action(object):
+    def __init__(self, create_cmd, edit_cmd, read_cmd, delete_cmd, all_cmd):
+        self.create_cmd = create_cmd
+        self.edit_cmd = edit_cmd
+        self.read_cmd= read_cmd
+        self.delete_cmd = delete_cmd
+        self.all_cmd = all_cmd
 
-    def on(self):
-        self.on_cmd.execute()
+    def create(self):
+        self.create_cmd.execute()
 
-    def off(self):
-        self.off_cmd.execute()
+    def edit(self):
+        self.edit_cmd.execute()
+
+    def read(self):
+        self.read_cmd.execute()
+
+    def delete(self):
+        self.delete_cmd.execute()
+
+    def all(self):
+        self.all_cmd.execute()
 
 
 light = Light()
