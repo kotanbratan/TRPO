@@ -1,21 +1,12 @@
 {% extends 'profile/base.html' %}
 
 {% block content %}
-<h1>Новая заявка</h1>
+<div class="page-header">
+  <strong><h1>Новая заявка</h1></strong>
+</div>
        <form method="POST" class="bid-form">{% csrf_token %}
            {{ form.as_p }}
            <button type="submit" class="save btn btn-default">Сохранить</button>
        </form>
-<!--  <h5>Дата: {{ bid.date }}</h5>
-  <h4>Создал: {{ bid.manager }}</h4>
-  <h4>Статус заявки: {{ bid.bid_status }}</a></h4>
-  <h4>Контрагент: {{ bid.bid_partner }}</h4>
-  <h4>Тип заявки: {{ bid.bid_type }}</h4>
-  <hr>
-  <p>Товар: {{ bid.bid_product }}</p>
-  <p>Количество: {{ bid.amount }}</p>
-<div>
-  <h4><a href="/bids/all/">Вернуться к списку заявок</a></h4>
-</div>-->
 
 {% endblock content %}

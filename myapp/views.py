@@ -2,14 +2,10 @@ from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseRedirect, Http404
 from django.utils import timezone
 from django.core.urlresolvers import reverse
-#from django.contrib.auth.models import User
-#from django.http import JsonResponse
 from django.template.loader import get_template
 from django.template import Context
 from django.shortcuts import render_to_response
 from django.shortcuts import redirect, get_object_or_404
-#from django.contrib.auth import login, logout
-#from django.contrib.auth.decorators import login_required
 from myapp.models import Bid, Partner, Product, Status, Type
 from myapp.forms import BidForm, BidEditForm, StatusForm
 
@@ -58,8 +54,6 @@ def PartnersList(request):
     return render_to_response('partners.html', {'partners': Partner.objects.all()})
 
 def NewBidView(request):
-    #    form = BidForm()
-    #    return render(request, 'myapp/NewBid.html', {'form': form})
         if request.method == "POST":
             form = BidForm(request.POST)
             if form.is_valid():

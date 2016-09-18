@@ -19,7 +19,6 @@ class Partner(models.Model):
 class Product(models.Model):
     product_name = models.CharField("Наименование", max_length=100)
     price = models.IntegerField("Цена", default=0)
-    #product_model = models.CharField("Модель", max_length=100)
 
     class Meta():
         verbose_name = "Товар"
@@ -55,7 +54,6 @@ class Status(models.Model):
 
 
 class Bid(models.Model):
-    #number = models.IntegerField("Номер заявки", default = 0)
     date = models.DateTimeField("Дата", default=timezone.now)
     manager = models.CharField("Менеджер", max_length=200)
     bid_partner = models.ForeignKey(Partner, verbose_name="Контрагент", null=True, blank=True)

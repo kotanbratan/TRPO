@@ -1,6 +1,9 @@
 {% extends 'profile/base.html' %}
 
 {% block content %}
+<div class="page-header">
+  <strong><h1>Список товаров</h1></strong>
+</div>
   {% for product in products %}
       <h4>Наименование: {{ product.product_name }}</h4>
       <p>Цена: {{ product.price }}</p>

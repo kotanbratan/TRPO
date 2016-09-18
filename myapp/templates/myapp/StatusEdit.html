@@ -7,22 +7,4 @@
            <button type="submit" class="save btn btn-default">Save</button>
        </form>
 
-
-
-<!--  <h5>Дата: {{ bid.date }}</h5>
-  <h4>Создал: {{ bid.manager }}</h4>
-  <h4>Контрагент: {{ bid.bid_partner }}</h4>
-  <h4>Тип заявки: {{ bid.bid_type }}</h4>
-  <p>Товар: {{ bid.bid_product }}</p>
-  <p>Количество: {{ bid.amount }}</p>
-<form action = "/bid/{{ bid.id }}/status/new/" method="post">
-  <b>Выберите статус заявки:</b><Br>
-    {% for status in statuses %}
-      <input type="radio" name="bid_status" value="{{ status.status_id }}"> {{ status.status_name }} <Br>
-    {% endfor %}
-
-    {{ form }}
-      <p><input type="submit" value="Сохранить"></p>
-</form>-->
-
 {% endblock content %}

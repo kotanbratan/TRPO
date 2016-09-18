@@ -1,13 +1,33 @@
-from core.base import BaseRecord
+#from myapp.base import BaseRecord
 
 
-class TestRecord(BaseRecord):
-    TABLE_NAME = 'core_test'
+class BidRecord(BaseRecord):
+    TABLE_NAME = 'myapp_bid'
     FIELDS = {
         'id',
-        'user_id',
-        'title',
-        'creation_date',
-        'description',
-        'total_points'
+        'date',
+        'manager',
+        'bid_partner',
+        'bid_type',
+        'bid_status',
+        'bid_product',
+        'amount'
+}
+
+class ProductRecord(BaseRecord):
+    TABLE_NAME = 'myapp_product'
+    FIELDS = {
+        'id',
+        'product_name',
+        'price'
+}
+
+
+class PartnerRecord(BaseRecord):
+    TABLE_NAME = 'myapp_partner'
+    FIELDS = {
+        'id',
+        'partner_name',
+        'partner_phone',
+        'organization'
 }

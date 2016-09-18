@@ -1,9 +1,8 @@
-#from django.contrib.auth.models import User
 from django.utils import timezone
 
-#from core.model.test.records import TestRecord, QuestionRecord, AnswerRecord
+#from myapp.records import BidRecord, ProductRecord, PartnerRecord
 
-class Bid:
+class BidDomain:
     bid = None
 
     @staticmethod
@@ -27,112 +26,69 @@ class Bid:
             return errors
 
     @classmethod
-    def validate(self, test_data):
+    def validate(self, bid_data):
         errors = {}
 
-        if not "title" in test_data:
-           errors['title'] = {
+        if not "manager" in bid_data:
+           errors['manager'] = {
                "message": "Обязательноe поле"
            }
 
-        if not "description" in test_data:
-            errors['description'] = {
+        if not "bid_partner" in bid_data:
+            errors['bid_data'] = {
                 "message": "Обязательноe поле"
             }
 
         return errors
 
     @classmethod
-    def change_test(self, test_data):
-        errors = self.validate(test_data)
-        if self.test is None and not errors:
-            self.test = TestRecord(user_id=test_data['user'],
-                              title=test_data['title'],
-                              creation_date=timezone.now,
-                              description=test_data['description'],
-                              total_points=100)
+    def change_bid(self, bid_data):
+        errors = self.validate(bid_data)
+        if self.bid is None and not errors:
+            self.bid = BidRecord(date=timezone.now,
+                            manager=bid_data['manager'],
+                            bid_partner=bid_data['bid_partner'],
+                            bid_type=bid_data['bid_type'],
+                            bid_status=bid_data['bid_status'],
+                            bid_product=bid_data['bid_product'],
+                            amount=bid_data['amount'])
 
-            self.test.save()
+            self.bid.save()
         else:
             return errors
 
     @classmethod
-    def get_all_tests(self, test):
-        return self.test.all()
+    def change_status(self, bid):
+            errors = self.validate(bid_data)
+            if self.bid is None and not errors:
+                self.bid = BidRecord(bid_status=bid_data['bid_status'],)
+
+                self.bid.save()
+            else:
+                return errors
 
     @classmethod
-    def remove_test(self):
-        return self.test.delete()
+    def remove_bid(self):
+        return self.bid.delete()
 
 
-class QuestionDomain:
-    question = None
+class ProductDomain:
+    product = None
 
-    @classmethod
-    def create_question(self, question_data):
-        errors = self.validate(question_data)
-
-        if self.question is None and not errors:
-            self.question = QuestionRecord(title=question_data['title'],
-                              text=question_data['text'],
-                              test_id=question_data['test'])
-
-            self.question.save()
-        else:
-            return errors
+    @staticmethod
+    def get_all_products():
+        return Product.objects.all()
 
 
-    @classmethod
-    def change_question(self, question_data):
-        errors = self.validate(question_data)
+class PartnerDomain:
+    partner = None
 
-        if not errors:
-            self.question = QuestionRecord(title=question_data['title'],
-                                           text=question_data['text'],
-                                           test_id=question_data['test'])
-            self.question.save()
-        else:
-            return errors
+    @staticmethod
+    def get_all_partners():
+        return Partner.objects.all()
 
+class StatusDomain:
+    partner = None
 
-    @classmethod
-    def validate(self, test_data):
-        errors = {}
-
-        if not "title" in test_data:
-            errors['title'] = {
-                "message": "Обязательноe поле"
-            }
-
-        if not "text" in test_data:
-            errors['text'] = {
-                "message": "Обязательноe поле"
-            }
-
-        return errors
-
-    @classmethod
-    def get_all_questions(self):
-        return self.question.all()
-
-    @classmethod
-    def remove_question(self):
-        return self.question.delete()
-
-
-class AnswerDomain:
-    asnwer = None
-
-    @classmethod
-    def create_answer(self, answer_data):
-        self.question = AnswerRecord(user_id=answer_data['user'],
-                                     test_id=answer_data['test'],
-                                     question_id=answer_data['question'],
-                                     answer_variant_id=answer_data['variant'])
-
-        self.question.save()
-
-
-    @classmethod
-    def get_answers(self):
-return self.answer.all()
+class TypeDomain:
+    partner = None

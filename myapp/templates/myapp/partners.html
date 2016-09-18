@@ -1,7 +1,9 @@
 {% extends 'profile/base.html' %}
 
 {% block content %}
-
+<div class="page-header">
+  <strong><h1>Список контрагентов</h1></strong>
+</div>
   {% for partner in partners %}
       <h4>Имя: {{ partner.partner_name }}</h4>
       <p>Телефон: {{ partner.partner_phone }}</p>

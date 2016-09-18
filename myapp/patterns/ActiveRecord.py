@@ -21,3 +21,11 @@ class Bid():
 
     def delete(self, pk):
         p=Bid.objects(id=pk).delete()
+
+    def update(self, pk):
+        p=Bid.objects.get(id=pk).update(bid_status=bid_status)
+        p=Bid.objects.get(id=pk).update(bid_product=bid_product)
+        p=Bid.objects.get(id=pk).update(amount=amount)
+
+    def get_all(self):
+        return Bid.objects.all()
